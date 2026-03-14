@@ -1,13 +1,13 @@
 # odooprotect
 
-# PyProtect - Advanced Python Code Obfuscator
+# OdooProtect - Advanced Python Code Obfuscator
 
-![PyProtect Logo](https://img.shields.io/badge/PyProtect-Advanced%20Obfuscation-blue?style=for-the-badge)
+![OdooProtect Logo](https://img.shields.io/badge/OdooProtect-Advanced%20Obfuscation-blue?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.6+-green?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%23FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/dynaz)
 
-PyProtect is a comprehensive Python code obfuscation tool with machine ID binding, designed to protect your Python applications from reverse engineering and unauthorized distribution.
+OdooProtect is a comprehensive Python code obfuscation tool with machine ID binding, designed to protect your Python applications from reverse engineering and unauthorized distribution.
 
 ## 🚀 Features
 
@@ -30,7 +30,7 @@ PyProtect is a comprehensive Python code obfuscation tool with machine ID bindin
 - **Cross-Platform**: Works on Linux, Windows, and macOS
 
 ### Command Line Interface
-- **Standalone Executable**: Run with `pyprotect` command after installation
+- **Standalone Executable**: Run with `odooprotect` command after installation
 - **Professional CLI**: Standard flag-based interface (`-i`, `-o`, `-m`, `-c`)
 - **Easy Installation**: One-command setup with `./install.sh`
 - **System Integration**: Available globally after installation
@@ -71,16 +71,16 @@ Choose one of the installation methods below based on your needs.
 
 ### One-Command Installation
 ```bash
-# Clone and install PyProtect with standalone command
-git clone https://github.com/dynaz/PyProtect.git
-cd PyProtect
+# Clone and install OdooProtect with standalone command
+git clone https://github.com/dynaz/OdooProtect.git
+cd OdooProtect
 ./install.sh
 ```
 
 ### Verify Installation
 ```bash
-pyprotect --help
-# Should display: PyProtect - Python Obfuscator with Machine ID Binding
+odooprotect --help
+# Should display: OdooProtect - Python Obfuscator with Machine ID Binding
 ```
 
 ---
@@ -90,20 +90,20 @@ pyprotect --help
 ### Step 1: Download
 ```bash
 # Clone the repository
-git clone https://github.com/dynaz/PyProtect.git
-cd PyProtect
+git clone https://github.com/dynaz/OdooProtect.git
+cd OdooProtect
 ```
 
 ### Step 2: Make Executable
 ```bash
 # Make the script executable
-chmod +x pyprotect.py
+chmod +x odooprotect.py
 ```
 
 ### Step 3: System Integration (Optional)
 ```bash
 # Create global symlink (requires sudo)
-sudo ln -sf "$(pwd)/pyprotect.py" /usr/local/bin/pyprotect
+sudo ln -sf "$(pwd)/odooprotect.py" /usr/local/bin/odooprotect
 
 # Or add to your PATH
 export PATH="$PATH:$(pwd)"
@@ -112,10 +112,10 @@ export PATH="$PATH:$(pwd)"
 ### Step 4: Verify
 ```bash
 # Test direct execution
-./pyprotect.py --help
+./odooprotect.py --help
 
 # Test global command (if symlink created)
-pyprotect --help
+odooprotect --help
 ```
 
 ---
@@ -124,20 +124,20 @@ pyprotect --help
 
 ### Build Docker Image
 ```bash
-git clone https://github.com/dynaz/PyProtect.git
-cd PyProtect
+git clone https://github.com/dynaz/OdooProtect.git
+cd OdooProtect
 
 # Build the image
-docker build -t pyprotect .
+docker build -t odooprotect .
 
-# Run PyProtect in container
-docker run -v $(pwd):/workspace pyprotect --help
+# Run OdooProtect in container
+docker run -v $(pwd):/workspace odooprotect --help
 ```
 
 ### Use Pre-built Image
 ```bash
 # Pull and run
-docker run -it dynaz/pyprotect --help
+docker run -it dynaz/odooprotect --help
 ```
 
 ---
@@ -147,8 +147,8 @@ docker run -it dynaz/pyprotect --help
 ### For Contributors
 ```bash
 # Clone repository
-git clone https://github.com/dynaz/PyProtect.git
-cd PyProtect
+git clone https://github.com/dynaz/OdooProtect.git
+cd OdooProtect
 
 # Set up virtual environment
 python3 -m venv venv
@@ -161,7 +161,7 @@ pip install -r requirements-dev.txt
 python -m pytest tests/
 
 # Make executable
-chmod +x pyprotect.py
+chmod +x odooprotect.py
 ```
 
 ---
@@ -171,10 +171,10 @@ chmod +x pyprotect.py
 ### Custom Installation Path
 ```bash
 # Install to custom location
-PYPROTECT_HOME="$HOME/.local/pyprotect"
+PYPROTECT_HOME="$HOME/.local/odooprotect"
 mkdir -p "$PYPROTECT_HOME"
-cp -r PyProtect/* "$PYPROTECT_HOME/"
-chmod +x "$PYPROTECT_HOME/pyprotect.py"
+cp -r OdooProtect/* "$PYPROTECT_HOME/"
+chmod +x "$PYPROTECT_HOME/odooprotect.py"
 
 # Add to PATH in your shell profile
 echo "export PATH=\"\$PATH:$PYPROTECT_HOME\"" >> ~/.bashrc
@@ -185,11 +185,11 @@ source ~/.bashrc
 ```bash
 # Copy to external drive
 EXTERNAL_DRIVE="/mnt/external"
-cp -r PyProtect "$EXTERNAL_DRIVE/"
-cd "$EXTERNAL_DRIVE/PyProtect"
+cp -r OdooProtect "$EXTERNAL_DRIVE/"
+cd "$EXTERNAL_DRIVE/OdooProtect"
 
 # Run directly
-python3 pyprotect.py --help
+python3 odooprotect.py --help
 ```
 
 ---
@@ -199,55 +199,55 @@ python3 pyprotect.py --help
 ### Test Your Installation
 ```bash
 # Basic functionality test
-pyprotect -m  # Should show your machine ID
+odooprotect -m  # Should show your machine ID
 
 # Obfuscation test
-pyprotect -i examples/demo.py  # Should create /dist/demo.py
+odooprotect -i examples/demo.py  # Should create /dist/demo.py
 
 # License check test
-pyprotect -c  # Should scan for license files
+odooprotect -c  # Should scan for license files
 ```
 
 ### Troubleshooting Installation
 ```bash
-# If pyprotect command not found
-which pyprotect  # Check if in PATH
-ls -la /usr/local/bin/pyprotect  # Check symlink
+# If odooprotect command not found
+which odooprotect  # Check if in PATH
+ls -la /usr/local/bin/odooprotect  # Check symlink
 
 # Test direct execution
-./pyprotect.py --help
+./odooprotect.py --help
 
 # Check permissions
-ls -la pyprotect.py
+ls -la odooprotect.py
 ```
 
-### Upgrade PyProtect
+### Upgrade OdooProtect
 ```bash
-cd PyProtect
+cd OdooProtect
 git pull origin main
 ./install.sh  # Re-run installer
 ```
 
 ## 🚀 Quick Start
 
-> **✅ NEW**: PyProtect now supports **Odoo and framework obfuscation**! Public API names (functions and classes that don't start with `_`) are automatically preserved, allowing cross-module imports to work correctly.
+> **✅ NEW**: OdooProtect now supports **Odoo and framework obfuscation**! Public API names (functions and classes that don't start with `_`) are automatically preserved, allowing cross-module imports to work correctly.
 
 ### Protect a Single File
 ```bash
-pyprotect -i my_script.py -b
+odooprotect -i my_script.py -b
 # Output: /dist/my_script.py (machine-bound)
 ```
 
 ### Protect an Entire Project
 ```bash
-pyprotect -i my_project/ -b -e 365
+odooprotect -i my_project/ -b -e 365
 # Output: /dist/my_project/ (entire project protected)
 # Note: Only use for self-contained projects without explicit cross-module imports
 ```
 
 ### Test Protection
 ```bash
-# Test a protected script (after running pyprotect on it)
+# Test a protected script (after running odooprotect on it)
 python3 -c "import sys; sys.path.insert(0, '.'); import my_protected_script"
 # Should work on licensed machine, fail on others
 
@@ -264,10 +264,10 @@ python3 -c "from models.user import User; u = User('Test', 25); print('User:', u
 
 ### Basic Syntax
 ```bash
-pyprotect -i INPUT [-o OUTPUT] [OPTIONS]
+odooprotect -i INPUT [-o OUTPUT] [OPTIONS]
 ```
 
-**Note**: After installation with `./install.sh`, you can use `pyprotect` from anywhere. Alternatively, use `python3 pyprotect.py` if running directly.
+**Note**: After installation with `./install.sh`, you can use `odooprotect` from anywhere. Alternatively, use `python3 odooprotect.py` if running directly.
 
 ### ✅ Recommended Use Cases
 - **Odoo Addons**: Custom Odoo modules and addons (✅ NEW: Fully supported!)
@@ -306,7 +306,7 @@ pyprotect -i INPUT [-o OUTPUT] [OPTIONS]
 
 ### 🆕 Public API Preservation (Default)
 
-By default, PyProtect preserves public API names to allow cross-module imports:
+By default, OdooProtect preserves public API names to allow cross-module imports:
 
 - **Preserved**: Public functions/classes (no leading `_`)
 - **Obfuscated**: Private functions/classes (leading `_`)
@@ -316,10 +316,10 @@ By default, PyProtect preserves public API names to allow cross-module imports:
 **Example**:
 ```bash
 # Default: Preserves public API (Odoo/Framework compatible)
-pyprotect -i my_odoo_addon/
+odooprotect -i my_odoo_addon/
 
 # Full obfuscation: May break imports
-pyprotect -i standalone_script.py --no-preserve-api
+odooprotect -i standalone_script.py --no-preserve-api
 ```
 
 ## 💡 Examples
@@ -327,48 +327,48 @@ pyprotect -i standalone_script.py --no-preserve-api
 ### Example 1: Basic File Protection
 ```bash
 # Protect a single Python file (output to /dist/filename.py)
-pyprotect -i sensitive_code.py
+odooprotect -i sensitive_code.py
 
 # Or specify custom output
-pyprotect -i sensitive_code.py -o protected.py
+odooprotect -i sensitive_code.py -o protected.py
 ```
 
 ### Example 2: Machine-Bound Protection
 ```bash
 # Protect and bind to current machine for 1 year
-pyprotect -i app.py -o app_protected.py -b -e 365
+odooprotect -i app.py -o app_protected.py -b -e 365
 ```
 
 ### Example 3: Project Protection
 ```bash
 # Protect entire Django/Flask project (output to /dist/)
-pyprotect -i my_django_project/ -b
+odooprotect -i my_django_project/ -b
 
 # Or specify custom output directory
-pyprotect -i my_django_project/ -o protected_project/ -b
+odooprotect -i my_django_project/ -o protected_project/ -b
 ```
 
 ### Example 4: Check Machine ID
 ```bash
 # Display current machine ID for licensing
-pyprotect -m
+odooprotect -m
 # Output: Machine ID: 0a3a756bffd5fe563cb9b9ec3e5e17fb
 ```
 
 ### Example 5: Check License Status
 ```bash
 # Check license validity in current directory
-pyprotect -c
+odooprotect -c
 
 # Check license in specific directory
-pyprotect -c /path/to/protected/app
+odooprotect -c /path/to/protected/app
 # Shows: ✅ VALID - License valid, ✅ Machine ID matches
 ```
 
 ### Example 6: Trial Version (30 days)
 ```bash
 # Create time-limited trial version
-pyprotect -i software.py -o trial_version.py -b -e 30
+odooprotect -i software.py -o trial_version.py -b -e 30
 ```
 
 ### Example 7: Obfuscating Odoo Addons (✅ Now Supported!)
@@ -377,10 +377,10 @@ pyprotect -i software.py -o trial_version.py -b -e 30
 # Public API names are preserved, allowing cross-module imports
 
 # Obfuscate a custom Odoo addon
-pyprotect -i /path/to/custom_addon/ -o /dist/custom_addon/ -b
+odooprotect -i /path/to/custom_addon/ -o /dist/custom_addon/ -b
 
 # Obfuscate entire Odoo server (if needed)
-pyprotect -i /odoo18/odoo18-server/addons/my_custom_addon/ -b
+odooprotect -i /odoo18/odoo18-server/addons/my_custom_addon/ -b
 
 # What gets preserved:
 # ✅ Public functions: def my_function() → preserved
@@ -448,8 +448,8 @@ _check_license()  # Validates machine and expiration
 
 ### File Structure
 ```
-PyProtect/
-├── pyprotect.py          # Main obfuscation tool
+OdooProtect/
+├── odooprotect.py          # Main obfuscation tool
 ├── README.md            # This documentation
 ├── examples/            # Sample projects
 │   ├── basic_script.py
@@ -467,7 +467,7 @@ PyProtect/
 - **Third-party Libraries**: Some libraries may not work with obfuscated code
 
 ### Public API Preservation (Default Behavior)
-- **✅ Framework Compatible**: By default, PyProtect preserves public API names (functions/classes not starting with `_`)
+- **✅ Framework Compatible**: By default, OdooProtect preserves public API names (functions/classes not starting with `_`)
 - **✅ Cross-Module Imports**: `from module import function_name` works correctly after obfuscation
 - **✅ Odoo Compatible**: Tested and working with Odoo's module system
 - **Option**: Use `--no-preserve-api` flag for full obfuscation (may break imports)
@@ -483,7 +483,7 @@ PyProtect/
 #### "ImportError: cannot import name 'function_name' from 'module'" (FIXED!)
 **Status**: ✅ **RESOLVED** - This issue is now fixed in the latest version!
 
-**Solution**: PyProtect now automatically preserves public API names (functions and classes that don't start with `_`), so cross-module imports work correctly by default.
+**Solution**: OdooProtect now automatically preserves public API names (functions and classes that don't start with `_`), so cross-module imports work correctly by default.
 
 **How it works**:
 ```python
@@ -497,7 +497,7 @@ from module import strftime_format_to_spreadsheet_date_format  # Works! ✅
 
 **Advanced Option**: If you need full obfuscation (which may break imports), use:
 ```bash
-pyprotect -i mycode.py --no-preserve-api
+odooprotect -i mycode.py --no-preserve-api
 ```
 
 **Best Practice**: Keep default behavior for Odoo/framework code. Only use `--no-preserve-api` for standalone scripts where no imports are needed.
@@ -524,7 +524,7 @@ pyprotect -i mycode.py --no-preserve-api
 ### Debug Mode
 ```bash
 # Enable verbose output
-pyprotect -i input.py -o output.py --verbose
+odooprotect -i input.py -o output.py --verbose
 ```
 
 ### Recovery
@@ -544,8 +544,8 @@ We welcome contributions! Please see our contributing guidelines:
 
 ### Development Setup
 ```bash
-git clone https://github.com/dynaz/PyProtect
-cd pyprotect
+git clone https://github.com/dynaz/OdooProtect
+cd odooprotect
 python3 -m pip install -r requirements-dev.txt
 python3 -m pytest tests/
 ```
@@ -585,7 +585,7 @@ For enterprise deployments and custom requirements:
 - Enterprise licensing: dynaz@mac.com
 
 ### Support the Project
-If you find PyProtect helpful, consider supporting the development:
+If you find OdooProtect helpful, consider supporting the development:
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%23FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/dynaz)
 
@@ -598,19 +598,19 @@ Your support helps maintain and improve this open-source project! ☕
 ### Most Common Commands
 ```bash
 # Quick protection (output to /dist/)
-pyprotect -i file.py -b
+odooprotect -i file.py -b
 
 # Project protection (output to /dist/)
-pyprotect -i project/ -b
+odooprotect -i project/ -b
 
 # Trial version (30 days)
-pyprotect -i app.py -o trial.py -b -e 30
+odooprotect -i app.py -o trial.py -b -e 30
 
 # Check machine ID
-pyprotect -m
+odooprotect -m
 
 # Check license status
-pyprotect -c
+odooprotect -c
 ```
 
 ### Verification
@@ -622,13 +622,13 @@ python3 protected.py
 python3 -c "import my_protected_module; print('Module works!')"
 
 # View machine ID (alternative method)
-pyprotect -m
+odooprotect -m
 
 # Check license validity in current directory
-pyprotect -c
+odooprotect -c
 
 # Check license in protected project
-pyprotect -c /dist/base
+odooprotect -c /dist/base
 
 # Test example protected scripts
 cd examples
@@ -638,4 +638,4 @@ python3 -c "import test_protected; result = test_protected.secret_function('supe
 
 ---
 
-**PyProtect** - Secure your Python code with advanced obfuscation and hardware binding! 🔐✨
+**OdooProtect** - Secure your Python code with advanced obfuscation and hardware binding! 🔐✨

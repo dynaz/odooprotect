@@ -1,6 +1,6 @@
-# Contributing to PyProtect
+# Contributing to OdooProtect
 
-Thank you for your interest in contributing to PyProtect! 🎉
+Thank you for your interest in contributing to OdooProtect! 🎉
 
 We welcome contributions from everyone. This document provides guidelines and information for contributors.
 
@@ -33,8 +33,8 @@ This project follows a code of conduct to ensure a welcoming environment for all
 ### Quick Setup
 ```bash
 # Fork and clone the repository
-git clone https://github.com/dynaz/PyProtect.git
-cd PyProtect
+git clone https://github.com/dynaz/OdooProtect.git
+cd OdooProtect
 
 # Set up development environment
 python3 -m venv venv
@@ -58,19 +58,19 @@ python -m pytest tests/
 python -m pytest tests/test_license.py -v
 
 # Run with coverage
-python -m pytest --cov=pyprotect tests/
+python -m pytest --cov=odooprotect tests/
 ```
 
 ### Code Quality
 ```bash
 # Format code
-black pyprotect.py tests/
+black odooprotect.py tests/
 
 # Lint code
-flake8 pyprotect.py tests/
+flake8 odooprotect.py tests/
 
 # Type checking (if applicable)
-mypy pyprotect.py
+mypy odooprotect.py
 ```
 
 ## 💡 How to Contribute
@@ -138,7 +138,7 @@ When reporting bugs, please include:
 4. **Environment details**:
    - Python version
    - Operating system
-   - PyProtect version
+   - OdooProtect version
 5. **Code samples** or **error messages**
 6. **Screenshots** if applicable
 
@@ -230,4 +230,4 @@ Contributors will be recognized in:
 - Release notes
 - Social media mentions
 
-Thank you for contributing to PyProtect! 🚀✨
+Thank you for contributing to OdooProtect! 🚀✨

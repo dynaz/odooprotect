@@ -1,13 +1,13 @@
-# PyProtect - Odoo Compatibility Guide
+# OdooProtect - Odoo Compatibility Guide
 
 ## ✅ Status: FULLY COMPATIBLE
 
-PyProtect has been enhanced to work seamlessly with Odoo and other Python frameworks that use cross-module imports.
+OdooProtect has been enhanced to work seamlessly with Odoo and other Python frameworks that use cross-module imports.
 
 ## 🎯 What Changed?
 
 ### The Problem (Before)
-When obfuscating Odoo code, PyProtect would rename ALL functions and classes, including public ones:
+When obfuscating Odoo code, OdooProtect would rename ALL functions and classes, including public ones:
 
 ```python
 # Original: odoo/addons/spreadsheet/utils/formatting.py
@@ -24,7 +24,7 @@ from odoo.addons.spreadsheet.utils.formatting import strftime_format_to_spreadsh
 ```
 
 ### The Solution (Now)
-PyProtect now preserves **public API names** (functions/classes without leading underscore) while still obfuscating private internals:
+OdooProtect now preserves **public API names** (functions/classes without leading underscore) while still obfuscating private internals:
 
 ```python
 # Original: odoo/addons/spreadsheet/utils/formatting.py
@@ -70,7 +70,7 @@ from odoo.addons.spreadsheet.utils.formatting import strftime_format_to_spreadsh
 ### Example 1: Obfuscate Odoo Addon
 ```bash
 # Obfuscate a custom Odoo addon with machine binding
-pyprotect -i /odoo18/addons/my_custom_addon/ -o /dist/my_custom_addon/ -b
+odooprotect -i /odoo18/addons/my_custom_addon/ -o /dist/my_custom_addon/ -b
 
 # Output shows:
 # ✅ Preserved N public API names (importable)
@@ -81,7 +81,7 @@ pyprotect -i /odoo18/addons/my_custom_addon/ -o /dist/my_custom_addon/ -b
 ### Example 2: Obfuscate Entire Odoo Server
 ```bash
 # You can now obfuscate the entire Odoo server if needed
-pyprotect -i /odoo18/odoo18-server/ -o /dist/odoo-protected/ -b
+odooprotect -i /odoo18/odoo18-server/ -o /dist/odoo-protected/ -b
 
 # This preserves all public APIs across all modules
 ```
@@ -89,7 +89,7 @@ pyprotect -i /odoo18/odoo18-server/ -o /dist/odoo-protected/ -b
 ### Example 3: Full Obfuscation (Standalone Scripts)
 ```bash
 # For standalone scripts where imports don't matter
-pyprotect -i standalone.py --no-preserve-api
+odooprotect -i standalone.py --no-preserve-api
 
 # This obfuscates EVERYTHING, including public names
 # Warning: Will break if imported by other code!
@@ -238,8 +238,8 @@ Even with public API preservation, your code is still protected:
 ## 🎓 Best Practices
 
 ### ✅ DO
-- Use PyProtect on custom Odoo addons
-- Use PyProtect on Django/Flask applications
+- Use OdooProtect on custom Odoo addons
+- Use OdooProtect on Django/Flask applications
 - Keep default public API preservation
 - Test thoroughly after obfuscation
 - Use machine binding for license enforcement
@@ -261,10 +261,10 @@ If you encounter any issues with Odoo compatibility:
 
 ## 🎉 Summary
 
-PyProtect now provides **enterprise-grade code protection** for Odoo and Python frameworks while maintaining **100% compatibility** with cross-module imports. You can now protect your proprietary Odoo addons and business logic without breaking functionality!
+OdooProtect now provides **enterprise-grade code protection** for Odoo and Python frameworks while maintaining **100% compatibility** with cross-module imports. You can now protect your proprietary Odoo addons and business logic without breaking functionality!
 
 ---
 
 **Last Updated**: December 2025
-**PyProtect Version**: 2.0 (Odoo Compatible)
+**OdooProtect Version**: 2.0 (Odoo Compatible)
 

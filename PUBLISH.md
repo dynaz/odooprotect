@@ -14,7 +14,7 @@ This project is published on [PyPI](https://pypi.org/manage/projects/) under the
 
 ## Build and upload
 
-From the project root (`C:\PyProtect`):
+From the project root (`C:\OdooProtect`):
 
 ### 1. Install build tools
 
@@ -61,7 +61,7 @@ pip install odooprotect
 Then run:
 
 - `odooprotect --help`
-- or `python -m pyprotect --help`
+- or `python -m odooprotect --help`
 
 ## Bumping the version
 

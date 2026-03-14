@@ -1,4 +1,4 @@
-# PyProtect Fixes - Complete Solution
+# OdooProtect Fixes - Complete Solution
 
 ## Root Cause Analysis
 
@@ -16,9 +16,9 @@ The obfuscation errors occurred because `NameCollector` (first pass) and `Obfusc
 
 ## Complete Fixes Applied
 
-### Fix 1: Synchronized Pattern Lists in pyprotect.py
+### Fix 1: Synchronized Pattern Lists in odooprotect.py
 
-**File:** `/odoo18/PyProtect/pyprotect.py`
+**File:** `/odoo18/OdooProtect/odooprotect.py`
 
 **Lines 227-240** - Updated `NameCollector.odoo_method_patterns`:
 ```python
@@ -95,7 +95,7 @@ def get_file_name(self, _obf_46, _obf_47, _obf_48=_decrypt_str('163')):
         _obf_49 = self.env[_obf_47].search([('id', 'in', _obf_46)], limit=1)  # Was: ids
 ```
 
-**Issue:** PyProtect obfuscated the parameter name from `ids` to `_obf_46`, but references to `ids` inside the function body weren't automatically updated by `ast.unparse`. This appears to be an edge case in AST transformation.
+**Issue:** OdooProtect obfuscated the parameter name from `ids` to `_obf_46`, but references to `ids` inside the function body weren't automatically updated by `ast.unparse`. This appears to be an edge case in AST transformation.
 
 ### Fix 5: Fixed JasperPy.process() Call with Obfuscated Parameters
 
@@ -152,7 +152,7 @@ def preview_pdf(self, report_id, **kwargs):  # ✅ report_id matches route
 
 **Issue:** Odoo HTTP routes use Flask-style URL patterns where `<int:report_id>` creates a parameter named `report_id`. This parameter name was obfuscated to `_obf_0`, causing Flask to fail matching the route parameter to the method parameter.
 
-**PyProtect Update (Lines 282, 493-538, 478-493):** Added controller class detection:
+**OdooProtect Update (Lines 282, 493-538, 478-493):** Added controller class detection:
 - Detect classes inheriting from `http.Controller`
 - Track when we're inside a controller class (`self.in_controller_class`)
 - Skip parameter obfuscation for controller methods
@@ -184,7 +184,7 @@ Methods starting with these patterns will **NOT** be obfuscated:
 ### Standard Odoo Methods:
 - `create`, `write`, `unlink`, `search`, `read`, etc. (in `odoo_reserved`)
 
-## How to Use Updated PyProtect
+## How to Use Updated OdooProtect
 
 ### Option 1: Re-protect from Scratch (Recommended)
 
@@ -193,10 +193,10 @@ If you have original unprotected source:
 ```bash
 # From /odoo18 directory
 cd /odoo18
-python3 PyProtect/pyprotect.py -i /path/to/original/dtr_jasper -o /odoo18/custom/SCR-18/dtr_jasper
+python3 OdooProtect/odooprotect.py -i /path/to/original/dtr_jasper -o /odoo18/custom/SCR-18/dtr_jasper
 ```
 
-The updated PyProtect will now correctly preserve `get_`, `set_`, `show_`, `process_` methods.
+The updated OdooProtect will now correctly preserve `get_`, `set_`, `show_`, `process_` methods.
 
 ### Option 2: Use Current Protected Version
 
@@ -219,7 +219,7 @@ After applying fixes, test:
 
 ## Files Modified
 
-1. **`/odoo18/PyProtect/pyprotect.py`**
+1. **`/odoo18/OdooProtect/odooprotect.py`**
    - Line 230-239: Synchronized NameCollector patterns with Obfuscator
 
 2. **`/odoo18/custom/SCR-18/dtr_jasper/models/jasper_report.py`**
@@ -235,7 +235,7 @@ After applying fixes, test:
 4. **`/odoo18/custom/SCR-18/dtr_jasper/controllers/main.py`**
    - Line 139: Fixed parameter name from `_obf_0` to `report_id`
 
-5. **`/odoo18/PyProtect/pyprotect.py`** (Updated again)
+5. **`/odoo18/OdooProtect/odooprotect.py`** (Updated again)
    - Lines 305-331: Added `execute` and `compile` to preservation patterns
    - Lines 336-358: Added double-check logic in func_map pre-population
    - Lines 282, 493-538: Added controller class detection

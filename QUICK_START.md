@@ -1,8 +1,8 @@
-# PyProtect Quick Start Guide
+# OdooProtect Quick Start Guide
 
 ## ✅ Fixed and Ready to Use!
 
-PyProtect has been updated to correctly handle Odoo modules. The synchronization issue between NameCollector and Obfuscator has been resolved.
+OdooProtect has been updated to correctly handle Odoo modules. The synchronization issue between NameCollector and Obfuscator has been resolved.
 
 ## Basic Usage
 
@@ -10,20 +10,20 @@ PyProtect has been updated to correctly handle Odoo modules. The synchronization
 
 ```bash
 cd /odoo18
-python3 PyProtect/pyprotect.py -i /path/to/your/module -o /path/to/output
+python3 OdooProtect/odooprotect.py -i /path/to/your/module -o /path/to/output
 ```
 
 ### Example: Protect dtr_jasper
 
 ```bash
 cd /odoo18
-python3 PyProtect/pyprotect.py -i /odoo18/custom/SCR-18/dtr_jasper.backup -o /odoo18/custom/SCR-18/dtr_jasper
+python3 OdooProtect/odooprotect.py -i /odoo18/custom/SCR-18/dtr_jasper.backup -o /odoo18/custom/SCR-18/dtr_jasper
 ```
 
 ### With Machine Binding
 
 ```bash
-python3 PyProtect/pyprotect.py -i /path/to/module -o /path/to/output -b -e 365
+python3 OdooProtect/odooprotect.py -i /path/to/module -o /path/to/output -b -e 365
 ```
 
 Options:
@@ -32,7 +32,7 @@ Options:
 
 ## What Gets Preserved
 
-PyProtect now preserves these method patterns (won't obfuscate):
+OdooProtect now preserves these method patterns (won't obfuscate):
 
 | Pattern | Example | Why Preserved |
 |---------|---------|---------------|
@@ -72,13 +72,13 @@ cd /odoo18/odoo18-server
 ## Check License Status
 
 ```bash
-python3 PyProtect/pyprotect.py -c /path/to/protected/module
+python3 OdooProtect/odooprotect.py -c /path/to/protected/module
 ```
 
 ## Get Machine ID
 
 ```bash
-python3 PyProtect/pyprotect.py -m
+python3 OdooProtect/odooprotect.py -m
 ```
 
 ## Troubleshooting
@@ -87,7 +87,7 @@ python3 PyProtect/pyprotect.py -m
 
 **Cause:** Method pattern not in preserved list
 
-**Fix:** Check `/odoo18/PyProtect/FIXES.md` for details
+**Fix:** Check `/odoo18/OdooProtect/FIXES.md` for details
 
 ### Error: "got an unexpected keyword argument"
 
@@ -108,5 +108,5 @@ python3 PyProtect/pyprotect.py -m
 
 ## Need Help?
 
-See `/odoo18/PyProtect/FIXES.md` for detailed technical information.
+See `/odoo18/OdooProtect/FIXES.md` for detailed technical information.
 

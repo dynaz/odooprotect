@@ -1,8 +1,8 @@
-# PyProtect - Odoo Compatibility Update
+# OdooProtect - Odoo Compatibility Update
 
 ## 🎉 Summary
 
-PyProtect has been successfully updated to work with Odoo! The tool now intelligently preserves public API names while obfuscating private internals, allowing cross-module imports to work correctly.
+OdooProtect has been successfully updated to work with Odoo! The tool now intelligently preserves public API names while obfuscating private internals, allowing cross-module imports to work correctly.
 
 ## ✨ What Was Fixed
 
@@ -24,7 +24,7 @@ PyProtect has been successfully updated to work with Odoo! The tool now intellig
 ### 4. **Command Line Option**
 - **Added**: `--no-preserve-api` flag for full obfuscation
 - **Default**: Public API preservation is ENABLED by default
-- **Usage**: `pyprotect -i file.py --no-preserve-api` for standalone scripts
+- **Usage**: `odooprotect -i file.py --no-preserve-api` for standalone scripts
 
 ### 5. **Odoo Field Detection**
 - **Enhanced**: Better detection of Odoo field assignments
@@ -55,7 +55,7 @@ PyProtect has been successfully updated to work with Odoo! The tool now intellig
 - **Reason**: These methods are commonly called from other Odoo modules
 - **Result**: Comprehensive Odoo API preservation for maximum compatibility
 
-## 📝 Changes to pyprotect.py
+## 📝 Changes to odooprotect.py
 
 ### New Features
 1. `preserve_public_api` parameter in `Obfuscator` class (default: `True`)
@@ -164,13 +164,13 @@ format_str → _obf_1
 ### For Odoo (Recommended)
 ```bash
 # Default behavior - public API preserved
-pyprotect -i /odoo18/addons/my_addon/ -o /dist/my_addon/ -b
+odooprotect -i /odoo18/addons/my_addon/ -o /dist/my_addon/ -b
 ```
 
 ### For Standalone Scripts
 ```bash
 # Full obfuscation - everything hidden
-pyprotect -i standalone.py --no-preserve-api -b
+odooprotect -i standalone.py --no-preserve-api -b
 ```
 
 ## 📊 Impact
@@ -200,7 +200,7 @@ To verify the fix works with your Odoo installation:
 
 ```bash
 # 1. Test on a small addon first
-pyprotect -i /odoo18/addons/your_addon/ -o /dist/test_addon/
+odooprotect -i /odoo18/addons/your_addon/ -o /dist/test_addon/
 
 # 2. Check that public functions are preserved
 grep -n "def your_public_function" /dist/test_addon/*.py
@@ -218,19 +218,19 @@ python3 -m odoo --addons-path=/dist/test_addon
 
 ## 🎓 Migration Guide
 
-If you tried PyProtect before and it broke your Odoo code:
+If you tried OdooProtect before and it broke your Odoo code:
 
 ### Before (Broken)
 ```bash
 # Old behavior - broke imports
-pyprotect -i addon/ -o dist/addon/
+odooprotect -i addon/ -o dist/addon/
 # ImportError: cannot import name 'function_name'
 ```
 
 ### After (Works!)
 ```bash
 # New behavior - preserves public API
-pyprotect -i addon/ -o dist/addon/
+odooprotect -i addon/ -o dist/addon/
 # Imports work! ✅
 ```
 
@@ -238,7 +238,7 @@ pyprotect -i addon/ -o dist/addon/
 - Your Odoo code doesn't need any modifications
 - All existing import statements work as-is
 - All function calls work as-is
-- Just re-run PyProtect with the updated version
+- Just re-run OdooProtect with the updated version
 
 ## 🎯 Recommendations
 

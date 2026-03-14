@@ -1,5 +1,5 @@
 """
-Test project for PyProtect
+Test project for OdooProtect
 """
 
 from .utils.helpers import format_data

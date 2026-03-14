@@ -11,14 +11,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="odooprotect",
     version="1.0.0",
-    author="PyProtect Team",
+    author="OdooProtect Team",
     author_email="support@creativedev.co.id",
     description="Advanced Odoo Protect Python code obfuscator with machine ID binding",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/dynaz/odooprotect",
     license="MIT",
-    py_modules=["pyprotect"],
+    py_modules=["odooprotect"],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -38,13 +38,13 @@ setup(
     python_requires=">=3.6",
     keywords="obfuscation security protection python code",
     project_urls={
-        "Bug Reports": "https://github.com/your-repo/pyprotect/issues",
-        "Source": "https://github.com/your-repo/pyprotect",
-        "Documentation": "https://pyprotect.readthedocs.io/",
+        "Bug Reports": "https://github.com/dynaz/odooprotect/issues",
+        "Source": "https://github.com/dynaz/odooprotect",
+        "Documentation": "https://odooprotect.readthedocs.io/",
     },
     entry_points={
         "console_scripts": [
-            "odooprotect=pyprotect:main",
+            "odooprotect=odooprotect:main",
         ],
     },
 )

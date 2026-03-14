@@ -1,7 +1,7 @@
 #!/bin/bash
-# PyProtect Installation Script
+# OdooProtect Installation Script
 
-echo "🚀 Installing PyProtect..."
+echo "🚀 Installing OdooProtect..."
 echo "=========================="
 
 # Check Python version
@@ -12,26 +12,26 @@ if [ $? -ne 0 ]; then
 fi
 
 # Make script executable
-chmod +x pyprotect.py
-echo "✅ Made pyprotect.py executable"
+chmod +x odooprotect.py
+echo "✅ Made odooprotect.py executable"
 
 # Create symlink for global access
-if [ -f "pyprotect.py" ]; then
-    SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/pyprotect.py"
+if [ -f "odooprotect.py" ]; then
+    SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/odooprotect.py"
 
     # Try to create symlink in /usr/local/bin (requires sudo)
-    if sudo ln -sf "$SCRIPT_PATH" /usr/local/bin/pyprotect 2>/dev/null; then
-        echo "✅ Created global symlink: pyprotect"
-        echo "   You can now use 'pyprotect' from anywhere!"
+    if sudo ln -sf "$SCRIPT_PATH" /usr/local/bin/odooprotect 2>/dev/null; then
+        echo "✅ Created global symlink: odooprotect"
+        echo "   You can now use 'odooprotect' from anywhere!"
     else
         echo "⚠️  Could not create global symlink (need sudo permissions)"
         echo "   You can still use: $SCRIPT_PATH"
         echo ""
         echo "   To create global symlink manually:"
-        echo "   sudo ln -sf $SCRIPT_PATH /usr/local/bin/pyprotect"
+        echo "   sudo ln -sf $SCRIPT_PATH /usr/local/bin/odooprotect"
     fi
 else
-    echo "❌ pyprotect.py not found in current directory"
+    echo "❌ odooprotect.py not found in current directory"
     exit 1
 fi
 
@@ -45,9 +45,9 @@ echo ""
 echo "🎉 Installation complete!"
 echo ""
 echo "📖 Usage Examples:"
-echo "  pyprotect -i file.py -b"
-echo "  pyprotect -i project/ -b"
-echo "  pyprotect -m  # Check machine ID"
-echo "  pyprotect -c  # Check license status"
+echo "  odooprotect -i file.py -b"
+echo "  odooprotect -i project/ -b"
+echo "  odooprotect -m  # Check machine ID"
+echo "  odooprotect -c  # Check license status"
 echo ""
-echo "📖 Run 'pyprotect --help' for full documentation"
+echo "📖 Run 'odooprotect --help' for full documentation"

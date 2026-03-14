@@ -1,4 +1,4 @@
-# PyProtect Docker Image
+# OdooProtect Docker Image
 FROM python:3.11-slim
 
 # Set working directory
@@ -9,27 +9,27 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy PyProtect files
+# Copy OdooProtect files
 COPY . .
 
 # Make executable
-RUN chmod +x pyprotect.py
+RUN chmod +x odooprotect.py
 
 # Create symlink
-RUN ln -sf /app/pyprotect.py /usr/local/bin/pyprotect
+RUN ln -sf /app/odooprotect.py /usr/local/bin/odooprotect
 
 # Set Python path
 ENV PYTHONPATH=/app
 
 # Default command
-CMD ["pyprotect", "--help"]
+CMD ["odooprotect", "--help"]
 
 # Labels
 LABEL maintainer="dynaz"
-LABEL description="PyProtect - Advanced Python Code Obfuscator"
+LABEL description="OdooProtect - Advanced Python Code Obfuscator"
 LABEL version="1.0.0"
 
 # Usage:
-# docker build -t pyprotect .
-# docker run pyprotect --help
-# docker run -v $(pwd):/workspace pyprotect -i /workspace/script.py
+# docker build -t odooprotect .
+# docker run odooprotect --help
+# docker run -v $(pwd):/workspace odooprotect -i /workspace/script.py

@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to PyProtect will be documented in this file.
+All notable changes to OdooProtect will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🎉 Initial Release
 
-PyProtect - Advanced Python Code Obfuscator with Machine ID Binding
+OdooProtect - Advanced Python Code Obfuscator with Machine ID Binding
 
 ### ✨ Added
 - **Core Obfuscation Engine**
@@ -70,7 +70,7 @@ PyProtect - Advanced Python Code Obfuscator with Machine ID Binding
 - Secure internal tools and scripts
 
 ### 📋 Files Included
-- `pyprotect.py` - Main obfuscation tool
+- `odooprotect.py` - Main obfuscation tool
 - `README.md` - Complete documentation
 - `LICENSE` - MIT license
 - `setup.py` - Python package configuration
@@ -117,4 +117,4 @@ Commits follow the [Conventional Commits](https://conventionalcommits.org/) spec
 
 ---
 
-**PyProtect 1.0.0** - Ready for production use! 🚀✨
+**OdooProtect 1.0.0** - Ready for production use! 🚀✨

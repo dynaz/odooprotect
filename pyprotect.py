@@ -28,7 +28,7 @@ import shutil
 from pathlib import Path
 
 def get_default_output_path():
-    """Get the default output path in PyProtect/dist directory"""
+    """Get the default output path in OdooProtect/dist directory"""
     # Resolve symlinks to get the actual script path
     actual_script_path = Path(__file__).resolve()
     script_dir = actual_script_path.parent.absolute()
@@ -174,7 +174,7 @@ def check_license_status(directory):
             print(f"❌ Error reading license file: {e}")
 
     print("\n" + "="*50)
-    print("💡 Tip: Use 'python3 pyprotect.py -m' to see your current machine ID")
+    print("💡 Tip: Use 'python3 odooprotect.py -m' to see your current machine ID")
 
 def generate_license_key(machine_id, expiration_days=365):
     """Generate a license key for the machine"""
@@ -1098,14 +1098,14 @@ def obfuscate_file(input_file, output_file, bind_machine=False, expiration_days=
             print(f"✅ Machine binding enabled (ID: {machine_id[:16]}...)")
 
 def main():
-    """CLI entry point for PyProtect (odooprotect on PyPI)."""
+    """CLI entry point for OdooProtect (odooprotect on PyPI)."""
     import argparse
 
-    parser = argparse.ArgumentParser(description="PyProtect - Python Obfuscator with Machine ID Binding")
+    parser = argparse.ArgumentParser(description="OdooProtect - Python Obfuscator with Machine ID Binding")
     parser.add_argument("-i", "--input",
                        help="Input Python file or directory (not needed with -m)")
     parser.add_argument("-o", "--output", default=str(get_default_output_path()),
-                       help="Output obfuscated file or directory (default: PyProtect/dist/filename or PyProtect/dist/inputname/)")
+                       help="Output obfuscated file or directory (default: OdooProtect/dist/filename or OdooProtect/dist/inputname/)")
     parser.add_argument("-m", "--machine-id", action="store_true",
                        help="Display current machine ID and exit")
     parser.add_argument("-c", "--check-license", nargs='?', const=".",
@@ -1139,7 +1139,7 @@ def main():
     # Validate input is provided when not using machine-id flag
     if not args.input:
         print("❌ Error: Input file or directory is required (use -i flag)")
-        print("Run 'python3 pyprotect.py --help' for usage information")
+        print("Run 'python3 odooprotect.py --help' for usage information")
         sys.exit(1)
 
     input_path = Path(args.input)

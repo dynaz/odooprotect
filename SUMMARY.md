@@ -1,8 +1,8 @@
-# PyProtect Fixes - Complete Summary
+# OdooProtect Fixes - Complete Summary
 
 ## All Errors Fixed ✅
 
-After protecting `dtr_jasper` with PyProtect, we encountered 7 different obfuscation issues. All have been resolved!
+After protecting `dtr_jasper` with OdooProtect, we encountered 7 different obfuscation issues. All have been resolved!
 
 ## The 7 Fixes
 
@@ -41,7 +41,7 @@ After protecting `dtr_jasper` with PyProtect, we encountered 7 different obfusca
 **Cause:** Controller route parameter `report_id` obfuscated to `_obf_0`  
 **Fix:** 
 - Manual: Restored `report_id` parameter name
-- PyProtect: Added controller detection, skip parameter obfuscation in controllers
+- OdooProtect: Added controller detection, skip parameter obfuscation in controllers
 
 ## Files Modified
 
@@ -50,10 +50,10 @@ After protecting `dtr_jasper` with PyProtect, we encountered 7 different obfusca
 2. `/odoo18/custom/SCR-18/dtr_jasper/jasperpy.py`
 3. `/odoo18/custom/SCR-18/dtr_jasper/controllers/main.py`
 
-### PyProtect Tool (Prevention)
-4. `/odoo18/PyProtect/pyprotect.py`
+### OdooProtect Tool (Prevention)
+4. `/odoo18/OdooProtect/odooprotect.py`
 
-## PyProtect Improvements
+## OdooProtect Improvements
 
 ### New Preservation Patterns
 Methods matching these patterns won't be obfuscated:
@@ -88,17 +88,17 @@ All jasper reports should now work:
 
 ## Re-Protection Guide
 
-With the updated PyProtect, you can now re-protect modules from source:
+With the updated OdooProtect, you can now re-protect modules from source:
 
 ```bash
 # Protect a module
-python3 /odoo18/PyProtect/pyprotect.py -i /path/to/source -o /path/to/output
+python3 /odoo18/OdooProtect/odooprotect.py -i /path/to/source -o /path/to/output
 
 # With machine binding
-python3 /odoo18/PyProtect/pyprotect.py -i /path/to/source -o /path/to/output -b -e 365
+python3 /odoo18/OdooProtect/odooprotect.py -i /path/to/source -o /path/to/output -b -e 365
 ```
 
-The new PyProtect will:
+The new OdooProtect will:
 - ✅ Preserve all getter/setter/show/process/execute methods
 - ✅ Skip controller parameter obfuscation
 - ✅ Double-check preservation patterns
@@ -137,12 +137,12 @@ The new PyProtect will:
 ## Support
 
 See also:
-- `/odoo18/PyProtect/FIXES.md` - Detailed technical documentation
-- `/odoo18/PyProtect/QUICK_START.md` - Usage guide
+- `/odoo18/OdooProtect/FIXES.md` - Detailed technical documentation
+- `/odoo18/OdooProtect/QUICK_START.md` - Usage guide
 
 ---
 
 **Status:** All 7 fixes applied and tested ✅  
 **Date:** December 9, 2025  
-**PyProtect Version:** Updated with controller detection and enhanced pattern matching
+**OdooProtect Version:** Updated with controller detection and enhanced pattern matching
 

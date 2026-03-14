@@ -1,0 +1,11 @@
+# PyProtect Requirements
+# No external dependencies required for basic functionality
+# All features use Python standard library
+
+# Optional: For enhanced AST processing in older Python versions
+# astor>=0.8.0  # Not required, PyProtect includes fallback
+
+# Development dependencies (for contributors)
+# pytest>=6.0.0
+# black>=21.0.0
+# flake8>=3.9.0

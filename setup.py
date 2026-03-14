@@ -10,7 +10,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="odooprotect",
-    version="1.0.0",
+    version="1.0.2",
     author="OdooProtect Team",
     author_email="support@creativedev.co.id",
     description="Advanced Odoo Protect Python code obfuscator with machine ID binding",
